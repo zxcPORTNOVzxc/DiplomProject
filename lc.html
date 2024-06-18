@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет - Дипломный.проект</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head> <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  .navbar {
+    background-color: #343a40;
+  }
+  .btn-logout {
+    background-color: #dc3545;
+    color: white;
+  }
+  .btn-profile {
+    background-color: #007bff;
+    color: white;
+  }
+  .btn-edit {
+    background-color: #28a745;
+    color: white;
+  }
+</style>
+<body>
+  <header class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="main.html">Диплом.проект</a>
+      <button class="btn btn-profile ml-auto" onclick="location.href='vacadd.html';">Создать вакансию</button>
+      <button class="btn btn-profile ml-2" onclick="location.href='myvacc.html';">Мои вакансии</button>
+      <button class="btn btn-profile ml-2 btn-success" onclick="location.href='myotc.html';">Мои отклики</button>
+      <button class="btn btn-logout ml-2" data-toggle="modal" data-target="#logoutModal">Выход</button>
+    </div>
+  </header>
+  <div class="content">
+  <div class="container">
+    <h1 class="mt-5 mb-5">Добро пожаловать в ваш личный кабинет!</h1>
+    <div class="form-group">
+      <h4><b><label for="fullName">ФИО:</label></b></h4>
+      <p id="fullName">Иванов Иван Иванович</p>
+      <button class="btn btn-edit" data-toggle="modal" data-target="#editFullNameModal">Изменить</button>
+    </div>
+    <div class="form-group">
+      <h4><b><label for="phoneNumber">Номер телефона:</label></b></h4>
+      <p id="phoneNumber">+7 (123) 456-78-90</p>
+      <button class="btn btn-edit" data-toggle="modal" data-target="#editPhoneNumberModal">Изменить</button>
+    </div>
+    <div class="form-group">
+    <b><h4><label for="email">Email:</label></b></h4>
+      <p id="email">example@example.com</p>
+      <button class="btn btn-edit" data-toggle="modal" data-target="#editEmailModal">Изменить</button>
+    </div>
+    <a href="resume.html" class="btn btn-primary">Моё резюме</a>
+  </div>
+
+
+  <div class="modal fade" id="editFullNameModal" tabindex="-1" role="dialog" aria-labelledby="editFullNameModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editFullNameModalLabel">Изменение ФИО</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="newFullName">Новое ФИО:</label>
+          <input type="text" class="form-control" id="newFullName">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="saveFullName">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="editPhoneNumberModal" tabindex="-1" role="dialog" aria-labelledby="editPhoneNumberModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editPhoneNumberModalLabel">Изменение номера телефона</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="newPhoneNumber">Новый номер телефона:</label>
+          <input type="text" class="form-control" id="newPhoneNumber">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="savePhoneNumber">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="editEmailModal" tabindex="-1" role="dialog" aria-labelledby="editEmailModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editEmailModalLabel">Изменение email</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="newEmail">Новый email:</label>
+          <input type="email" class="form-control" id="newEmail">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="saveEmail">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="logoutModalLabel">Выход из личного кабинета</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Вы уверены, что хотите выйти из личного кабинета?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+          <a href="main.html" class="btn btn-primary">Выйти</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <footer class="footer bg-dark text-light mt-5">
+    <div class="container">
+      <span>Дипломный проект &copy; 2024</span>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.getElementById('saveFullName').addEventListener('click', function() {
+      var newFullName = document.getElementById('newFullName').value;
+      document.getElementById('fullName').innerText = newFullName;
+    });
+
+    document.getElementById('savePhoneNumber').addEventListener('click', function() {
+      var newPhoneNumber = document.getElementById('newPhoneNumber').value;
+      document.getElementById('phoneNumber').innerText = newPhoneNumber;
+    });
+
+    document.getElementById('saveEmail').addEventListener('click', function() {
+      var newEmail = document.getElementById('newEmail').value;
+      document.getElementById('email').innerText = newEmail;
+    });
+  </script>
+    <script src="script.js"></script>
+</body>
+</html>
